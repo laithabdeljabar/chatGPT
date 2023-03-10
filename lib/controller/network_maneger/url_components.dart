@@ -9,4 +9,4 @@ enum EndPoints { models, completions, chat }
 
 String baseUrl = "https://api.openai.com/v1";
 
-String key = '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';
+String key = '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';
