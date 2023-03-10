@@ -1,16 +1,10 @@
 # chatgpt
 
-A new Flutter project.
+ChatGPT mobile application using fluter (Provider state mangment)
 
 ## Getting Started
+# Video
 
-This project is a starting point for a Flutter application.
+https://user-images.githubusercontent.com/108566946/224338625-0dae0c78-588f-430a-9268-45b2970f8e9d.mp4
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
