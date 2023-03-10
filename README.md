@@ -1,10 +1,12 @@
 # chatgpt
 
-ChatGPT mobile application using fluter (Provider state mangment)
+ChatGPT mobile application using fluter (Provider state mangment) and openAI APIs 
 
-## Getting Started
 # Video
 
-https://user-images.githubusercontent.com/108566946/224338625-0dae0c78-588f-430a-9268-45b2970f8e9d.mp4
+
+https://user-images.githubusercontent.com/108566946/224352500-a9392d16-1edc-435c-8688-62cc48310115.mp4
+
+
 
 
