@@ -4,7 +4,7 @@ ChatGPT mobile application using fluter (Provider state mangment)
 
 ## Getting Started
 # Video
-This project is 
 
-https://user-images.githubusercontent.com/108566946/224336614-c7f14f57-b2d4-4727-8918-414275ecdebf.mp4
+Uploading 82a7a95c-e86a-4be0-bbd4-689b02f5288f.mp4…
+
 
