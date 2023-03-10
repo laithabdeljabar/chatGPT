@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../widget/chat_list.dart';
 import '../widget/chat_text_field.dart';
+import '../widget/erroe_widget_snackbar.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -39,6 +40,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final modelController = Provider.of<ModelController>(context, listen: false);
+
     return Scaffold(
       appBar: AppBar(
         leading: Image.asset(
@@ -48,13 +51,20 @@ class _HomeState extends State<Home> {
         actions: [
           IconButton(
               onPressed: () async {
-                await showModalBottomSheet(
-                    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                    context: context,
-                    builder: (context) => Padding(
-                          padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.02),
-                          child: const ModelDropDownBotton(),
-                        ));
+                if (modelController.models.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      behavior: SnackBarBehavior.floating,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      content: ErrorWidgetSnackBar(errorMessage: modelController.error)));
+                } else {
+                  await showModalBottomSheet(
+                      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                      context: context,
+                      builder: (context) => Padding(
+                            padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.02),
+                            child: const ModelDropDownBotton(),
+                          ));
+                }
               },
               icon: const Icon(
                 Icons.more_vert_rounded,

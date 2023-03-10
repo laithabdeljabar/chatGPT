@@ -36,28 +36,6 @@ class ModelDropDownBotton extends StatelessWidget {
                 );
               },
             );
-            // return DropdownButton(
-            //     isExpanded: true,
-            //     dropdownColor: Theme.of(context).scaffoldBackgroundColor,
-            //     value: selectedEvaluation,
-            //     hint: Text(
-            //       'Choose Mode',
-            //       style: Theme.of(context).textTheme.displayMedium,
-            //     ),
-            //     items: value
-            //         .map<DropdownMenuItem<String>>(
-            //           (e) => DropdownMenuItem(
-            //             value: e,
-            //             child: Text(
-            //               e.id,
-            //               style: Theme.of(context).textTheme.displayMedium,
-            //             ),
-            //           ),
-            //         )
-            //         .toList(),
-            //     onChanged: (String val) {
-            //       Provider.of<ModelController>(context, listen: false).setCurrentModel(val);
-            //     });
           },
         );
       },

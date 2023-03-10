@@ -5,7 +5,6 @@ import 'package:chatgpt/controller/network_maneger/network_controller.dart';
 import 'package:chatgpt/model/message_model.dart';
 import 'package:flutter/material.dart';
 
-import 'network_maneger/expeption.dart';
 import 'network_maneger/url_components.dart';
 
 class MessageController extends ChangeNotifier {
@@ -32,21 +31,18 @@ class MessageController extends ChangeNotifier {
       if (responseMap['error'] != null) {
         error = responseMap['error']['message'];
         onFail();
-        throw CustomExeption(errorDescreption: error, statusCode: -1);
+      } else {
+        Message message = Message(
+          text: responseMap["choices"][0]["text"],
+          index: 0,
+          like: -1,
+        );
+        onSuccess();
+        addTomessageList(message);
       }
-      Message message = Message(
-        text: responseMap["choices"][0]["text"],
-        index: 0,
-        like: -1,
-      );
-      onSuccess();
-      addTomessageList(message);
       notifyListeners();
     } on SocketException {
-      error = 'Please  Chek internet connection';
-      onFail();
-    } on CustomExeption catch (e) {
-      error = e.errorDescreption;
+      error = 'Please chek internet connection';
       onFail();
     } catch (e) {
       error = 'Server error';
@@ -84,21 +80,18 @@ class MessageController extends ChangeNotifier {
       if (responseMap['error'] != null) {
         error = responseMap['error']['message'];
         onFail();
-        throw CustomExeption(errorDescreption: error, statusCode: -1);
+      } else {
+        Message message = Message(
+          text: responseMap["choices"][0]["message"]["content"],
+          index: 0,
+          like: -1,
+        );
+        onSuccess();
+        addTomessageList(message);
       }
-      Message message = Message(
-        text: responseMap["choices"][0]["message"]["content"],
-        index: 0,
-        like: -1,
-      );
-      onSuccess();
-      addTomessageList(message);
       notifyListeners();
     } on SocketException {
-      error = 'Please  Chek internet connection';
-      onFail();
-    } on CustomExeption catch (e) {
-      error = e.errorDescreption;
+      error = 'Please chek internet connection';
       onFail();
     } catch (e) {
       error = 'Server error';
